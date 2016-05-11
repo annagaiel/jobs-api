@@ -1,4 +1,4 @@
-class JobsController < ApplicationController
+class Api::V1::JobsController < ApplicationController
   def index
     @jobs = Job.all
   end

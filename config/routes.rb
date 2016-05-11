@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  get '/jobs', to:'jobs#index'
-  get '/jobs/:id', to:'jobs#show'
-  post '/jobs', to: 'jobs#create'
+
+  namespace :api do
+    namespace :v1 do
+      get '/jobs', to:'jobs#index'
+      get '/jobs/:id', to:'jobs#show'
+      post '/jobs', to: 'jobs#create'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
