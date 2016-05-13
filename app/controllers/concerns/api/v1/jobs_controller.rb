@@ -14,4 +14,17 @@ class Api::V1::JobsController < ApplicationController
 
     render :show
   end
+
+  def update
+    @job = Job.find_by(id: params[:id])
+    @job.update(title: params[:title],
+    description: params[:description], salary: params[:salary])
+    render :show
+  end
+
+  def destroy
+    @job = Job.find_by(id: params[:id])
+    @job.destroy
+    render json: @job
+  end
 end
