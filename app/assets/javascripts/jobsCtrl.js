@@ -20,6 +20,11 @@
         $scope.newJobSalary = null;
 
       }
+
+      $scope.deleteJob = function(index){
+        $scope.jobs.splice(index, 1);
+      }
+
       window.$scope = $scope;
   });
 })();
