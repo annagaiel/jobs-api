@@ -1,0 +1,13 @@
+<h1>Jobs#index</h1>
+<p>Find me in app/views/jobs/index.html.erb</p>
+<div ng-app="app">
+  <div ng-controller="jobsCtrl" ng-init="setup()">
+    <ul>
+      <li ng-repeat="job in jobs track by $index">
+        <h2>{{$index + 1}} {{ job.title }}</h2>
+        <div>{{ job.description }}</div>
+        <div>{{ job.salary }}</div>
+      </li>
+    </ul>
+  </div>
+</div>
