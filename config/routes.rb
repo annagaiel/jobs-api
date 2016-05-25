@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'jobs/index'
+  root 'jobs#index'
 
   namespace :api do
     namespace :v1 do
