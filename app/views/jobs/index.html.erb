@@ -2,6 +2,11 @@
 <p>Find me in app/views/jobs/index.html.erb</p>
 <div ng-app="app">
   <div ng-controller="jobsCtrl" ng-init="setup()">
+    <input ng-model="newJobTitle" placeholder="title">
+    <input ng-model="newJobDesc" placeholder="description">
+    <input ng-model="newJobSalary" placeholder="salary">
+    <button ng-click="addJob(newJobTitle, newJobDesc, newJobSalary)">Add Job</button>
+
     <ul>
       <li ng-repeat="job in jobs track by $index">
         <h2>{{$index + 1}} {{ job.title }}</h2>

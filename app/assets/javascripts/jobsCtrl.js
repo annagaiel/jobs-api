@@ -7,6 +7,19 @@
           $scope.jobs = response.data;
         });
       }
+
+      $scope.addJob = function(newTitle, newDesc, newSalary){
+        var job = {
+          title: newTitle,
+          description: newDesc,
+          salary: newSalary
+        }
+        $scope.jobs.push(job);
+        $scope.newJobTitle = null;
+        $scope.newJobDesc = null;
+        $scope.newJobSalary = null;
+
+      }
       window.$scope = $scope;
   });
 })();
