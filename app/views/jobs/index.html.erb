@@ -2,6 +2,9 @@
 <p>Find me in app/views/jobs/index.html.erb</p>
 <div ng-app="app">
   <div ng-controller="jobsCtrl" ng-init="setup()">
+    <ul>
+      <li ng-repeat="error in errors">{{ error }}</li>
+    </ul>
     <input ng-model="newJobTitle" placeholder="title">
     <input ng-model="newJobDesc" placeholder="description">
     <input ng-model="newJobSalary" placeholder="salary">

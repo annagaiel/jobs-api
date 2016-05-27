@@ -10,9 +10,11 @@ class Api::V1::JobsController < ApplicationController
   def create
     @job = Job.new(title: params[:title],
     description: params[:description], salary: params[:salary])
-    @job.save
-
-    render :show
+    if @job.save
+      render :show
+    else
+      render json: {errors: @job.errors.full_messages}, status: 422
+    end
   end
 
   def update

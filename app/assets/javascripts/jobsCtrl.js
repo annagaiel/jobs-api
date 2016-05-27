@@ -14,11 +14,14 @@
           description: newDesc,
           salary: newSalary
         }
-        $scope.jobs.push(job);
-        $scope.newJobTitle = null;
-        $scope.newJobDesc = null;
-        $scope.newJobSalary = null;
-
+        $http.post('/api/v1/jobs.json', job).then(function(response) {
+          $scope.jobs.push(response.data);
+          $scope.newJobTitle = null;
+          $scope.newJobDesc = null;
+          $scope.newJobSalary = null;
+        }, function(error) {
+          $scope.errors = error.data.errors;
+        });
       }
 
       $scope.deleteJob = function(index){
