@@ -24,10 +24,12 @@
         });
       }
 
-      $scope.deleteJob = function(index){
-        $scope.jobs.splice(index, 1);
+      $scope.deleteJob = function(job){
+        $http.delete('/api/v1/jobs/' + job.id + '.json').then(function(response){
+          var index = $scope.jobs.indexOf(job);
+          $scope.jobs.splice(index, 1);
+        });
       }
-
       window.$scope = $scope;
   });
 })();

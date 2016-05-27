@@ -15,7 +15,7 @@
         <h2>{{$index + 1}} {{ job.title }}</h2>
         <div>{{ job.description }}</div>
         <div>{{ job.salary }}</div>
-        <a href="#" ng-click="deleteJob($index)">Delete</a>
+        <a href="#" ng-click="deleteJob(job)">Delete</a>
       </li>
     </ul>
   </div>
