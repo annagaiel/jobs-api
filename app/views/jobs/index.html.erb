@@ -10,9 +10,13 @@
     <input ng-model="newJobSalary" placeholder="salary">
     <button ng-click="addJob(newJobTitle, newJobDesc, newJobSalary)">Add Job</button>
 
+    <label>Filter:</label>
+    <input ng-model="titleFilter">
+    <label>Filter:</label>
+    <input ng-model="descriptionFilter">
     <ul>
-      <li ng-repeat="job in jobs track by $index">
-        <h2>{{$index + 1}} {{ job.title }}</h2>
+      <li ng-repeat="job in jobs | filter: {title: titleFilter, description: descriptionFilter}">
+        <h2>{{ job.title }}</h2>
         <div>{{ job.description }}</div>
         <div>{{ job.salary }}</div>
         <a href="#" ng-click="deleteJob(job)">Delete</a>
