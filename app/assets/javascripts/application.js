@@ -14,5 +14,7 @@
 //= require jquery_ujs
 //= require angular.min
 //= require angular-animate
+//= require bootstrap.min
+//= require ui-bootstrap
 //= require app
 //= require_tree .

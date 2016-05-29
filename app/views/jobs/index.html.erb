@@ -4,12 +4,22 @@
     <ul>
       <li ng-repeat="error in errors">{{ error }}</li>
     </ul>
-    <div>
-      <input ng-model="newJobTitle" placeholder="title">
-      <input ng-model="newJobDesc" placeholder="description">
-      <input ng-model="newJobSalary" placeholder="salary">
-      <button ng-click="addJob(newJobTitle, newJobDesc, newJobSalary)">Add Job</button>
-    </div>
+
+    <form class="form-inline" role="form">
+      <div class="form-group">
+        <label class="control-label" for="title">Title</label>
+        <input ng-model="newJobTitle" placeholder="Enter a title" class="form-control" id="title">
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="description">Description</label>
+        <input ng-model="newJobDesc" placeholder="Enter a description" class="form-control" id="description">
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="salary">Salary:</label>
+        <input ng-model="newJobSalary" placeholder="salary" class="form-control" id="salary">
+      </div>
+      <button ng-click="addJob(newJobTitle, newJobDesc, newJobSalary)" class="btn btn-primary">Add Job</button>
+    </form>
 
     <datalist id="titles">
       <option ng-repeat="job in jobs">{{job.title}}</option>
@@ -18,14 +28,15 @@
     <datalist id="descriptions">
       <option ng-repeat="job in jobs">{{job.description}}</option>
     </datalist>
-
-    <div>
+  <br>
+    <form class="form-inline" role="form">
       <label>Filter by Title:</label>
-      <input ng-model="titleFilter" list="titles">
+      <input ng-model="titleFilter" list="titles" class="form-control">
       <label>Filter by Description:</label>
-      <input ng-model="descriptionFilter" list="descriptions">
-    </div>
-  <table>
+      <input ng-model="descriptionFilter" list="descriptions" class="form-control">
+    </form>
+  <br>
+  <table class="table">
     <tr>
       <th><a href="#" ng-click="toggleOrder('title')">Title</a></th>
       <th><a href="#" ng-click="toggleOrder('description')">Description</a></th>
