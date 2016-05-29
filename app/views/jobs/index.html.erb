@@ -5,22 +5,34 @@
     <ul>
       <li ng-repeat="error in errors">{{ error }}</li>
     </ul>
-    <input ng-model="newJobTitle" placeholder="title">
-    <input ng-model="newJobDesc" placeholder="description">
-    <input ng-model="newJobSalary" placeholder="salary">
-    <button ng-click="addJob(newJobTitle, newJobDesc, newJobSalary)">Add Job</button>
+    <div>
+      <input ng-model="newJobTitle" placeholder="title">
+      <input ng-model="newJobDesc" placeholder="description">
+      <input ng-model="newJobSalary" placeholder="salary">
+      <button ng-click="addJob(newJobTitle, newJobDesc, newJobSalary)">Add Job</button>
+    </div>
+    <div>
+      <label>Filter by Title:</label>
+      <input ng-model="titleFilter">
+      <label>Filter by Description:</label>
+      <input ng-model="descriptionFilter">
+    </div>
+  <table>
+    <tr>
+      <th><a href="#" ng-click="toggleOrder('title')">Title</a></th>
+      <th><a href="#" ng-click="toggleOrder('description')">Description</a></th>
+      <th><a href="#" ng-click="toggleOrder('salary')">Salary</a></th>
+      <th>Action</th>
+    </tr>
+    <tr ng-repeat="job in jobs | filter: {title: titleFilter, description: descriptionFilter} | orderBy: orderAttribute:descending">
+      <td>{{ job.title }}</td>
+      <td>{{ job.description }}</td>
+      <td>{{ job.salary }}</td>
+      <td><a href="#" ng-click="deleteJob(job)">Delete</a></td>
+    </tr>
+  </table>
 
-    <label>Filter:</label>
-    <input ng-model="titleFilter">
-    <label>Filter:</label>
-    <input ng-model="descriptionFilter">
-    <ul>
-      <li ng-repeat="job in jobs | filter: {title: titleFilter, description: descriptionFilter}">
-        <h2>{{ job.title }}</h2>
-        <div>{{ job.description }}</div>
-        <div>{{ job.salary }}</div>
-        <a href="#" ng-click="deleteJob(job)">Delete</a>
-      </li>
-    </ul>
+
+
   </div>
 </div>
