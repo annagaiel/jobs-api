@@ -11,11 +11,20 @@
       <input ng-model="newJobSalary" placeholder="salary">
       <button ng-click="addJob(newJobTitle, newJobDesc, newJobSalary)">Add Job</button>
     </div>
+
+    <datalist id="titles">
+      <option ng-repeat="job in jobs">{{job.title}}</option>
+    </datalist>
+
+    <datalist id="descriptions">
+      <option ng-repeat="job in jobs">{{job.description}}</option>
+    </datalist>
+
     <div>
       <label>Filter by Title:</label>
-      <input ng-model="titleFilter">
+      <input ng-model="titleFilter" list="titles">
       <label>Filter by Description:</label>
-      <input ng-model="descriptionFilter">
+      <input ng-model="descriptionFilter" list="descriptions">
     </div>
   <table>
     <tr>
