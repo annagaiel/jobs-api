@@ -1,6 +1,6 @@
 (function(){
   "use Strict"
-  angular.module("app").controller("jobsCtrl",
+  angular.module("app").controller("jobsCtrl", ['$scope', '$http',
     function($scope, $http){
       $scope.setup = function(){
         $http.get("/api/v1/jobs.json").then(function(response){
@@ -41,5 +41,5 @@
       }
 
       window.$scope = $scope;
-  });
+  }]);
 })();
