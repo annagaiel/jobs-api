@@ -15,6 +15,7 @@
 //= require angular.min
 //= require angular-rails-templates
 //= require_tree ../templates
+//= require highpay_filter
 //= require angular-animate
 //= require bootstrap.min
 //= require ui-bootstrap

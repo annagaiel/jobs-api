@@ -1,4 +1,4 @@
-angular.module("app").filter('highpay', [function () {
+angular.module("highpayJobs", []).filter('highpay', [function () {
   return function(jobs) {
     if (jobs) {
       var highpayJobs = [];
