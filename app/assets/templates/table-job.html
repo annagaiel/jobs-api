@@ -5,7 +5,7 @@
     <th><a href="#" ng-click="toggleOrder('salary')">Salary</a></th>
     <th>Action</th>
   </tr>
-  <tr ng-repeat="job in jobs | filter: {title: titleFilter, description: descriptionFilter} | orderBy: orderAttribute:descending">
+  <tr ng-repeat="job in jobs | highpay | filter: {title: titleFilter, description: descriptionFilter} | orderBy: orderAttribute:descending">
     <td>{{ job.title }}</td>
     <td>{{ job.description }}</td>
     <td>{{ job.salary }}</td>
