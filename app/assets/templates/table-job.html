@@ -1,0 +1,14 @@
+<table class="table">
+  <tr>
+    <th><a href="#" ng-click="toggleOrder('title')">Title</a></th>
+    <th><a href="#" ng-click="toggleOrder('description')">Description</a></th>
+    <th><a href="#" ng-click="toggleOrder('salary')">Salary</a></th>
+    <th>Action</th>
+  </tr>
+  <tr ng-repeat="job in jobs | filter: {title: titleFilter, description: descriptionFilter} | orderBy: orderAttribute:descending">
+    <td>{{ job.title }}</td>
+    <td>{{ job.description }}</td>
+    <td>{{ job.salary }}</td>
+    <td><a href="#" ng-click="deleteJob(job)">Delete</a></td>
+  </tr>
+</table>
