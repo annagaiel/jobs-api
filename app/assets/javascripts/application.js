@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require angular.min
+//= require angular-rails-templates
+//= require_tree ../templates
 //= require angular-animate
 //= require bootstrap.min
 //= require ui-bootstrap
